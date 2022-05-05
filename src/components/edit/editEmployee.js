@@ -30,8 +30,10 @@ const EditUser = () => {
   const onSubmit = async e => {
     e.preventDefault();
     await axios.put(`https://localhost:44302/api/Employee/${id}`, employee);
-    Swal.fire('Employee updated', '', 'success');
-    window.location.href = "/";
+
+    Swal.fire('Employee updated', '', 'success').then((result) => {
+      window.location.href = "/";
+    });
   };
 
   const loadEmployee = async () => {
