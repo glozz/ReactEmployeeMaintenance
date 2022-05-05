@@ -59,9 +59,10 @@ class CreateEmployee extends React.Component {
       };
 
       fetch('https://localhost:44302/api/employee',requestOptions).then(async response => {
-              Swal.fire('Employee created successfully', '', 'success')
-              window.location.href = "/";
-        })
+              Swal.fire('Employee created successfully', '', 'success').then((result) => {
+                window.location.href = "/";
+              });
+        });
     }
 
     render() {

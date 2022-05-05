@@ -19,8 +19,9 @@ class CreatePerson extends React.Component {
              birthDate : birthDate.value
            })
         })
-        Swal.fire('Person created successfully', '', 'success')
-        window.location.href = "/personIndex";
+        Swal.fire('Person created successfully', '', 'success').then((result) => {
+          window.location.href = "/personIndex";
+        });
     }
 
     render() {

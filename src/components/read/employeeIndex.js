@@ -48,8 +48,9 @@ async deleteEmployee(id) {
       }).then(async response => {
         if(response.ok)
         {
-          Swal.fire('Employee Deleted!', '', 'success');
-          window.location.reload(false);
+          Swal.fire('Employee Deleted!', '', 'success').then((result) => {
+            window.location.reload(false);
+          })
         }
         else
         {
